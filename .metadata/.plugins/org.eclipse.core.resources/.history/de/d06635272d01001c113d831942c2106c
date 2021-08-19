@@ -1,0 +1,52 @@
+package com.revature;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+public class EmployeeDAOImpl implements EmployeeDAO{
+	
+	private static Statement statement = null;
+	Connection connection = null;
+	
+	public EmployeeDAOImpl() {
+		try {
+			this.connection = ConnectionFactory.getConnection();
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+
+	@Override
+	public void addEmployee(Employee employee) {
+		String sql = "insert into employee (name, email, gender, country) values (?,?,?,?)";
+		
+	}
+
+	@Override
+	public void updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteEmployee(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Employee> getEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee getEmployeeById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

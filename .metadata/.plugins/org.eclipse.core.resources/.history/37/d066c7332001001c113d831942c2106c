@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<h1>Add Employee</h1>
+
+		<form method="get" action="LoginServlet">
+			<input type="Text" name="name"/>
+			<input type="submit" value="Login"/>
+		</form>
+
+</body>
+</html>

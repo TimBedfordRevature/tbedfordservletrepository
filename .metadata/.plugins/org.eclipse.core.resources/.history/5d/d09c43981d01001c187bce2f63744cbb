@@ -1,0 +1,28 @@
+package com.revature;
+
+import java.sql.PreparedStatement;
+import java.sql.*;
+
+public class EmployeeDAOImpl implements EmployeeDAO {
+	
+	private static PreparedStatement preparedStatement = null;
+	Connection connection = null;
+	
+	@Override
+    public void addEmployee(Employee employee) throws SQLException {
+        String query = "insert into customer (name, email, password, acc_number, balance) values (?,?,?,?,?)";
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, customer.getName());
+        preparedStatement.setString(2, customer.getEmail());
+        preparedStatement.setString(3, customer.getPassword());
+        preparedStatement.setInt(4, customer.getAcc_number());
+        preparedStatement.setDouble(5, customer.getBalance());
+        int count = preparedStatement.executeUpdate();
+        if (count > 0)
+            System.out.println("Account added");
+        else
+            System.out.println("ERROR: Something went wrong");
+    }
+	
+
+}

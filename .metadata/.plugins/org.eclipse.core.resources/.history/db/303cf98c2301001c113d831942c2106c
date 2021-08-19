@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+<style>
+	.wrapper{ width: 40%; border: 1px solid #666; margin: 0 auto; padding: 20px;}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Add Employee</h1>
+		<form action="AddEmployeeServlet" method="post">
+		<table>
+			<tr>
+				<td>Enter Name</td>
+				<td><input type="text" name="name" placeholder="Name" /></td>
+			</tr>
+			<tr>
+				<td>Enter Email</td>
+				<td><input type="text" name="email" placeholder="Email" /></td>
+			</tr>
+			<tr>
+				<td>Select Gender</td>
+				<td>
+					<input type="radio" name="gender" value="male"/> Male &nbsp;&nbsp;
+					<input type="radio" name="gender" value="male"/> Female
+				</td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td><input type="text" name="country" placeholder="country" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="Save "/>
+				 </td>
+			</tr>
+		</table>
+		</form>
+		<a href='EmployeeListServlet'>View List</a>
+	</div>
+</body>
+</html>

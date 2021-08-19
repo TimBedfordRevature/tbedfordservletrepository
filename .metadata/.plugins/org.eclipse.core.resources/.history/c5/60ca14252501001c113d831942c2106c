@@ -1,0 +1,82 @@
+package com.revature;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+public class AddEmployeeServlet extends HttpServlet {
+	
+	private static EmployeeDAO employeeDAO = EmployeeDAOFactory.getEmployeeDAO();
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		out.println("<!DOCTYPE html>\r\n"
+				+ "<html>\r\n"
+				+ "<head>\r\n"
+				+ "<meta charset=\"ISO-8859-1\">\r\n"
+				+ "<title>Registration Form</title>\r\n"
+				+ "<style>\r\n"
+				+ "	.wrapper{ width: 40%; border: 1px solid #666; margin: 0 auto; padding: 20px;}\r\n"
+				+ "</style>\r\n"
+				+ "</head>\r\n"
+				+ "<body>\r\n"
+				+ "	<div class=\"wrapper\">\r\n"
+				+ "     <h1>Record Saved Successfully</h1>\r\n"
+				+ "		<h1>Add Employee</h1>\r\n"
+				+ "		<form action=\"register\" method=\"post\">\r\n"
+				+ "		<table>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<td>Enter Name</td>\r\n"
+				+ "				<td><input type=\"text\" name=\"name\" placeholder=\"Name\" /></td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<td>Enter Email</td>\r\n"
+				+ "				<td><input type=\"text\" name=\"email\" placeholder=\"Email\" /></td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<td>Select Gender</td>\r\n"
+				+ "				<td>\r\n"
+				+ "					<input type=\"radio\" name=\"gender\" value=\"male\"/> Male &nbsp;&nbsp;\r\n"
+				+ "					<input type=\"radio\" name=\"gender\" value=\"male\"/> Female\r\n"
+				+ "				</td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<td>Country</td>\r\n"
+				+ "				<td><input type=\"text\" name=\"country\" placeholder=\"country\" /></td>\r\n"
+				+ "			</tr>\r\n"
+				+ "			<tr>\r\n"
+				+ "				<td colspan=\"2\">\r\n"
+				+ "					<input type=\"submit\" value=\"Save \"/>\r\n"
+				+ "				 </td>\r\n"
+				+ "			</tr>\r\n"
+				+ "		</table>\r\n"
+				+ "		</form>\r\n"
+				+ "		<a href='EmployeeListServlet'>View List</a>\r\n"
+				+ "	</div>\r\n"
+				+ "</body>\r\n"
+				+ "</html>");
+		
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String gender = request.getParameter("gender");
+		String country = request.getParameter("country");
+		
+		employeeDAO.addEmployee(name, email, gender, country);
+		
+		
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("uname", name);
+		session.setAttribute("uemail", email);
+		session.setAttribute("ugender", gender);
+		session.setAttribute("ucountry", country);
+		
+		
+	}
+}

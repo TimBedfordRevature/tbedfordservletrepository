@@ -1,0 +1,9 @@
+package com.revature;
+
+import java.sql.SQLException;
+
+public interface EmployeeDAO {
+	
+	 void addEmployee(String name, String email, String gender, String country) throws SQLException;
+
+}

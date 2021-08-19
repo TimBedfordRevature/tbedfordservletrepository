@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="servlet1" method="get">
+		<input type="button" name="login" placeholder="Login"/>
+		<input type="submit" value="Go to Servlet 1" />
+	</form>
+
+</body>
+</html>

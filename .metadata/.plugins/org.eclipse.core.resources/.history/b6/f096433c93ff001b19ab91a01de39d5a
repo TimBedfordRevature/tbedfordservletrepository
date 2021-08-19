@@ -1,0 +1,33 @@
+package com.revature;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class Servlet1 extends HttpServlet{
+	
+	public void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		try(PrintWriter out = response.getWriter()){
+			out.println("<!DOCTYPE html>");
+			out.println("<HTML>");
+			out.println("<Head>");
+			out.println("<Title>Servlet State Management</Title>");
+			out.println("</Head>");
+			out.println("<Body>");
+			
+			String name = request.getParameter("name");
+			out.println("<h1>Hello, " + name + " Welcome to my website...</ht>");
+			
+			out.println("</Body>");
+			out.println("</HTML>");
+		}
+		
+	}
+	
+	
+
+}

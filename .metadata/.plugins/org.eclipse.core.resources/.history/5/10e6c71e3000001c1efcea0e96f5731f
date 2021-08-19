@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>
+		<form action="login1" method="get">
+			<input type="submit" value="login" />
+		</form>
+
+		<form action="login1" method="get">
+			<input type="submit" value="logout" />
+		</form>
+
+		<form action="profile" method="get">
+			<input type="submit" value="profile" />
+		</form>
+
+	</h1>
+
+</body>
+</html>
