@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <meta charset="ISO-8859-1">
 <title>Registration Form</title>
 <style>
-	.wrapper{ width: 40%; border: 1px solid #666; margin: 0 auto; padding: 20px;}
+	.wrapper{ width: 40%; border: 1px solid #666; margin: 0 auto; margin-top: 10%; background-color: #F1F17D; padding: 20px;}
+    body{
+        background-color: rgb(126, 126, 126);
+    }
 </style>
 </head>
 <body>
@@ -23,13 +28,20 @@
 			<tr>
 				<td>Select Gender</td>
 				<td>
-					<input type="radio" name="gender" value="male"/> Male &nbsp;&nbsp;
+					<input type="radio" name="gender" value="male"/> Male 
 					<input type="radio" name="gender" value="male"/> Female
 				</td>
 			</tr>
 			<tr>
 				<td>Country</td>
-				<td><input type="text" name="country" placeholder="country" /></td>
+				<td>
+                    <select name="country" id="country">
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="AU">AU</option>
+                    <option value="CO">CO</option>
+                  </select>
+                </td>
 			</tr>
 			<tr>
 				<td colspan="2">
